@@ -25,12 +25,12 @@
       <div class="col-1 col-md-1"></div>
       <div class="col-10 col-md-10">
 
-        <div class='form_login'>
+        <div class='form_login text-center'>
           <img src='images/logo.png' class='logo' />
           <div class='inputs_container text-center'>
-            <button class='button'><i class="fa fa-search" id='icons' aria-hidden="true"></i></button><br>
-            <button class='button'><a href="add_commande.php"><i class="fa fa-plus" id='icons' aria-hidden="true"></i></a></button><br>
-            <button class='button'><i class="fa fa-list" id='icons' aria-hidden="true"></i></button><br>
+             <a href="rechercher_commande.php">   <button class='button'><i class="fa fa-search" id='icons' aria-hidden="true"></i></button><br>
+             <a href="add_commande.php"><button class='button'><i class="fa fa-plus" id='icons' aria-hidden="true"></i></button></a><br>
+              <a href="rechercher_list_commande.php"><button class='button'><i class="fa fa-list" id='icons' aria-hidden="true"></i></button><br>
           </div>
         </div>
       </div>

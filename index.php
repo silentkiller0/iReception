@@ -27,7 +27,7 @@
             <input type='text' id='server' class='inputs' placeholder='Serveur'>
             <input type='text' id='username' class='inputs' placeholder="Nom d'utilisateur">
             <input type='password' id='password' class='inputs' placeholder='Mot de passe'>
-            <input type='submit' id='submit' class='button' value="S'authentifier">
+            <a href="Dashboard.php"><input type='submit' id='submit' class='button' value="S'authentifier"></a>
           </div>
         </div>
       </div>

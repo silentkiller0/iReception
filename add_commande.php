@@ -43,8 +43,8 @@
 
             <input type='text' id='code_commande' class='inputs' placeholder="Code Commande">
             <input type='text' id='qnt' class='inputs' placeholder='Quantité'>
-            <button class='button'><a href="valide_commande.php"><i class="fa fa-arrow-right" id='icons'
-                  aria-hidden="true"></i></a></button><br>
+            <a href="valide_commande.php"><button class='button'><a href="valide_commande.php"><i class="fa fa-arrow-right" id='icons'
+                  aria-hidden="true"></i></a></button></a><br>
           </div>
         </div>
       </div>

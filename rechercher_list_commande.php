@@ -31,9 +31,9 @@
           </div>
           <img src='images/logo.png' class='logo' />
           <div class='inputs_container'>
-            <input  id='nb_commande' class='inputs' placeholder='Numero de commande'>
+            <input id='num_commande' class='inputs' placeholder='Numéro de Commande'>
 
-            <a href="show_commande.php"><Button class='button_search'  id='icon'><i class="fa fa-search" aria-hidden="true"></i></Button></a>
+            <a href="list_commande.php"><Button class='button_search'  id='icon'><i class="fa fa-search" aria-hidden="true"></i></Button></a>
 
           </div>
         </div>
