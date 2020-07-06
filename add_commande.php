@@ -3,6 +3,8 @@
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"
   integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script type="text/javascript" src="bootstrap/js/jquery.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -22,12 +24,26 @@
       <div class="col-10 col-md-10">
 
         <div class='form_login'>
+          <div class='header_buttons'>
+            <i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i>
+            <i class="fa fa-power-off" aria-hidden="true" id='header_logout'></i>
+          </div>
           <img src='images/logo.png' class='logo' />
-          <div class='inputs_container'>
-            <input type='text' id='server' class='inputs' placeholder='Serveur'>
-            <input type='text' id='username' class='inputs' placeholder="Nom d'utilisateur">
-            <input type='password' id='password' class='inputs' placeholder='Mot de passe'>
-            <input type='submit' id='submit' class='button' value="S'authentifier">
+          <div class='inputs_container text-center'>
+
+
+            <select class='inputs' id='fournisseurs'>
+              <option value="fournisseurs 1">fournisseurs 1</option>
+              <option value="fournisseurs 2">fournisseurs 2</option>
+              <option value="fournisseurs 3">fournisseurs 3</option>
+              <option value="fournisseurs 4">fournisseurs 4</option>
+            </select>
+
+
+
+            <input type='text' id='code_commande' class='inputs' placeholder="Code Commande">
+            <input type='text' id='qnt' class='inputs' placeholder='Quantité'>
+            <button class='button'><i class="fa fa-arrow-right" id='icons' aria-hidden="true"></i></button><br>
           </div>
         </div>
       </div>
@@ -61,6 +77,26 @@
     margin-top: 3%;
   }
 
+  .header_buttons {}
+
+  #header_logout {
+    font-size: 25px;
+    color: #F27F54;
+    position: absolute;
+    right: -20px;
+    top: 45px;
+    z-index: 100;
+  }
+
+  #header_back {
+    font-size: 25px;
+    color: #F27F54;
+    position: absolute;
+    left: -20px;
+    top: 45px;
+    z-index: 100;
+  }
+
   .inputs {
     border-style: solid;
     border-width: 2px;
@@ -77,14 +113,20 @@
   }
 
   .button {
-    background-color: #384D61;
-    width: 100%;
+    background-color: #F27F54;
+    width: 100px;
     border-style: solid;
-    border-width: 0px;
-    border-radius: 10px;
-    margin-top: 20px;
-    color: #F27F54;
-    height: 50px
+    border-color: #384D61;
+    border-width: 3px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    color: #384D61;
+    height: 100px;
+  }
+
+  #icons {
+    font-size: 40px;
+
   }
 
   .footer {

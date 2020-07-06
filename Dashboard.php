@@ -4,6 +4,10 @@
   integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script type="text/javascript" src="bootstrap/js/jquery.js"></script>
 
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -23,12 +27,10 @@
 
         <div class='form_login'>
           <img src='images/logo.png' class='logo' />
-          <div class='inputs_container'>
-            <input type='text' id='server' class='inputs' placeholder='Serveur'>
-            <input type='text' id='username' class='inputs' placeholder="Nom d'utilisateur">
-            <input type='password' id='password' class='inputs' placeholder='Mot de passe'>
-            <input type='submit' id='submit' class='button' value="S'authentifier">
-          </div>
+          <div class='inputs_container text-center'>
+            <button class='button'><i class="fa fa-search" id='icons' aria-hidden="true"></i></button><br>
+            <button class='button'><i class="fa fa-plus" id='icons' aria-hidden="true"></i></button><br>
+c          </div>
         </div>
       </div>
 
@@ -55,36 +57,33 @@
     width: 100%;
   }
 
+  #icons {
+    font-size: 40px;
+
+  }
+
   .logo {
     width: 100%;
     margin-bottom: 10%;
-    margin-top: 3%;
+    margin-top: 1%;
   }
 
-  .inputs {
-    border-style: solid;
-    border-width: 2px;
-    border-color: #F27F54;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    width: 100%;
-    height: 60px;
-    padding-left: 15px;
-  }
+
 
   .inputs_container {
-    margin-top: 20px;
+    margin-top: 5px;
   }
 
   .button {
-    background-color: #384D61;
-    width: 100%;
+    background-color: #F27F54;
+    width: 100px;
     border-style: solid;
-    border-width: 0px;
-    border-radius: 10px;
-    margin-top: 20px;
-    color: #F27F54;
-    height: 50px
+    border-color: #384D61;
+    border-width: 3px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    color: #384D61;
+    height: 100px;
   }
 
   .footer {
