@@ -111,6 +111,7 @@
   .buttons_container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
   }
 
   #header_logout {
