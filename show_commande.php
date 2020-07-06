@@ -1,8 +1,9 @@
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"
   integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script type="text/javascript" src="bootstrap/js/jquery.js"></script>
+
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"
   integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-<script type="text/javascript" src="bootstrap/js/jquery.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
   integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
@@ -18,6 +19,7 @@
 <body>
 
 
+
   <div class="container">
     <div class="row">
       <div class="col-1 col-md-1"></div>
@@ -25,7 +27,7 @@
 
         <div class='form_login'>
           <div class='header_buttons'>
-            <a href="add_commande.php"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
+            <a href="Dashboard.php"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
             <i class="fa fa-power-off" aria-hidden="true" id='header_logout'></i>
           </div>
           <img src='images/logo.png' class='logo' />
@@ -38,26 +40,24 @@
 
             <div class='print_container'>
               <input type='text' id='palette' class='inputs' placeholder="Palette 1">
-              <button class='button_print'><i class="fa fa-print" id='icons_print' aria-hidden="true"></i></button><br>
+              <button class='button_print' data-toggle="modal" data-target="#exampleModal"><i class="fa fa-eye"
+                  id='icons_print' aria-hidden="true"></i></button><br>
             </div>
 
 
 
             <div class='print_container'>
               <input type='text' id='palette' class='inputs' placeholder="Palette 1">
-              <button class='button_print'><i class="fa fa-print" id='icons_print' aria-hidden="true"></i></button><br>
+              <button class='button_print' data-toggle="modal" data-target="#exampleModal"><i class="fa fa-eye"
+                  id='icons_print' aria-hidden="true"></i></button><br>
             </div>
 
             <div class='print_container'>
               <input type='text' id='palette' class='inputs' placeholder="Palette 1">
-              <button class='button_print'><i class="fa fa-print" id='icons_print' aria-hidden="true"></i></button><br>
+              <button class='button_print' data-toggle="modal" data-target="#exampleModal"><i class="fa fa-eye"
+                  id='icons_print' aria-hidden="true"></i></button><br>
             </div>
 
-            <div class='buttons_container text-center'>
-              <button class='button_nav'><i class="fa fa-minus" id='icons' aria-hidden="true"></i></button><br>
-              <button class='button'><i class="fa fa-check" id='icons' aria-hidden="true"></i></button><br>
-              <button class='button_nav'><i class="fa fa-plus" id='icons' aria-hidden="true"></i></button><br>
-            </div>
           </div>
         </div>
       </div>
@@ -75,6 +75,38 @@
 
 
 
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Emplacement</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <label>Allée</label>
+          <input type='text' class='details_empl'><br><br>
+
+          <label>Rayon</label>
+          <input type='text' class='details_empl'><br><br>
+
+          <label>Etage</label>
+          <input type='text' class='details_empl'>
+
+
+          <div class='text-center'>
+            <button class='button_modal'><i class="fa fa-check" id='icons' aria-hidden="true"></i></button><br>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>
@@ -89,6 +121,14 @@
     width: 100%;
     margin-bottom: 10%;
     margin-top: 3%;
+  }
+
+  .details_empl {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #F27F54;
+    border-radius: 10px;
+    width: 100px;
   }
 
   .commande_ref {
@@ -151,6 +191,18 @@
   }
 
   .button {
+    background-color: #F27F54;
+    width: 100px;
+    border-style: solid;
+    border-color: #384D61;
+    border-width: 3px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    color: #384D61;
+    height: 100px;
+  }
+
+  .button_modal {
     background-color: #F27F54;
     width: 100px;
     border-style: solid;

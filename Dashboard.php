@@ -29,8 +29,9 @@
           <img src='images/logo.png' class='logo' />
           <div class='inputs_container text-center'>
             <button class='button'><i class="fa fa-search" id='icons' aria-hidden="true"></i></button><br>
-            <button class='button'><i class="fa fa-plus" id='icons' aria-hidden="true"></i></button><br>
-c          </div>
+            <button class='button'><a href="add_commande.php"><i class="fa fa-plus" id='icons' aria-hidden="true"></i></a></button><br>
+            <button class='button'><i class="fa fa-list" id='icons' aria-hidden="true"></i></button><br>
+          </div>
         </div>
       </div>
 
@@ -59,7 +60,7 @@ c          </div>
 
   #icons {
     font-size: 40px;
-
+    color:#384D61
   }
 
   .logo {

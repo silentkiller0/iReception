@@ -25,7 +25,7 @@
 
         <div class='form_login'>
           <div class='header_buttons'>
-            <i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i>
+            <a href="Dashboard.php"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
             <i class="fa fa-power-off" aria-hidden="true" id='header_logout'></i>
           </div>
           <img src='images/logo.png' class='logo' />
@@ -43,7 +43,8 @@
 
             <input type='text' id='code_commande' class='inputs' placeholder="Code Commande">
             <input type='text' id='qnt' class='inputs' placeholder='Quantité'>
-            <button class='button'><i class="fa fa-arrow-right" id='icons' aria-hidden="true"></i></button><br>
+            <button class='button'><a href="valide_commande.php"><i class="fa fa-arrow-right" id='icons'
+                  aria-hidden="true"></i></a></button><br>
           </div>
         </div>
       </div>
@@ -126,7 +127,7 @@
 
   #icons {
     font-size: 40px;
-
+    color: #384D61
   }
 
   .footer {
