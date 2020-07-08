@@ -3,10 +3,9 @@
 <script type="text/javascript" src="../../Ressources/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
+<script type="text/javascript" src="../../Controllers/Login/Checking.js"></script>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +13,6 @@
 </head>
 
 <body>
-
-
   <div class="container">
     <div class="row">
       <div class="col-1 col-md-1"></div>
@@ -24,10 +21,11 @@
         <div class='form_login'>
           <img src='../../Ressources/images/logo.png' class='logo' />
           <div class='inputs_container'>
-            <input type='text' id='server' class='inputs' placeholder='Serveur'>
-            <input type='text' id='username' class='inputs' placeholder="Nom d'utilisateur">
-            <input type='password' id='password' class='inputs' placeholder='Mot de passe'>
-            <a href="Dashboard.php"><input type='submit' id='submit' class='button' value="S'authentifier"></a>
+            <input type='text' id='server' class='inputs' placeholder='Serveur' value='http://82.253.71.109/prod/bdc_v11_04'>
+            <input type='text' id='username' class='inputs' placeholder="Nom d'utilisateur" value="admin">
+            <input type='password' id='password' class='inputs' placeholder='Mot de passe' value="anexys1,">
+            <input type='submit' id='submit' class='button' value="S'authentifier" onclick="auth()">
+            <div style="color:red" class='text-center'><b id='auth_message'></b></div>
           </div>
         </div>
       </div>
