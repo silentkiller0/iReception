@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"
+<link rel="stylesheet" href="../../Ressources/bootstrap/css/bootstrap.min.css"
   integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"
   integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -26,7 +26,7 @@
       <div class="col-10 col-md-10">
 
         <div class='form_login text-center'>
-          <img src='images/logo.png' class='logo' />
+          <img src='../../Ressources/images/logo.png' class='logo' />
           <div class='inputs_container text-center'>
              <a href="rechercher_commande.php">   <button class='button'><i class="fa fa-search" id='icons' aria-hidden="true"></i></button><br>
              <a href="add_commande.php"><button class='button'><i class="fa fa-plus" id='icons' aria-hidden="true"></i></button></a><br>

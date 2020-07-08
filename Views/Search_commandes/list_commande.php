@@ -1,6 +1,6 @@
 
 
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"
+<link rel="stylesheet" href="../../Ressources/bootstrap/css/bootstrap.min.css"
   integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"
   integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -28,7 +28,7 @@
             <a href="Dashboard.php"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
             <i class="fa fa-power-off" aria-hidden="true" id='header_logout'></i>
           </div>
-          <img src='images/logo.png' class='logo' />
+          <img src='../../Ressources/images/logo.png' class='logo' />
           <div class='inputs_container text-center'>
             <div class='commande_ref'>
               <label>Code commande</label>
