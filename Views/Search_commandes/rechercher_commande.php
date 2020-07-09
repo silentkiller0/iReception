@@ -4,6 +4,9 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
+<script type="text/javascript" src="../../Controllers/Search_commandes/Checking_commande.js"></script>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -32,8 +35,8 @@
           <img src='../../Ressources/images/logo.png' class='logo' />
           <div class='inputs_container'>
             <input  id='nb_commande' class='inputs' placeholder='Numero de commande'>
-
-            <a href="show_commande.php"><Button class='button_search'  id='icon'><i class="fa fa-search" aria-hidden="true"></i></Button></a>
+            <div style="color:red" class='text-center'><b id='check_message'></b></div>
+            <Button class='button_search' id='icon' onclick="check()"><i class="fa fa-search" aria-hidden="true"></i></Button>
 
           </div>
         </div>
