@@ -1,7 +1,11 @@
+<?php
+include("../../Controllers/Login/auto_checking.php");
+?>
 <script type="text/javascript" src="../../Ressources/bootstrap/js/jquery.js"></script>
 <link rel="stylesheet" href="../../Ressources/bootstrap/css/bootstrap.min.css">
 <script type="text/javascript" src="../../Ressources/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="../../Controllers/List_commandes/get_data.js"></script>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -30,29 +34,28 @@
           <div class='inputs_container text-center'>
 
             <div class='commande_ref'>
-              <label>Code commande</label>
+            <label>Réference : </label><span><?php echo $_GET['ref_commande']; ?></span>
             </div>
 
+            <?php
+            
+            $ids=explode( ',', $_GET['id_empl']);
+            $i =1;
+            $qt=$_GET['qty'];
+            while($i<=intval($qt)){
 
-            <div class='print_container'>
-              <input type='text' id='palette' class='inputs' placeholder="Palette 1">
-              <button class='button_print' data-toggle="modal" data-target="#exampleModal"><i class="fa fa-eye"
-                  id='icons_print' aria-hidden="true"></i></button><br>
-            </div>
+              echo "<div class='print_container' id='new_".$i."'>
+                    <span class='inputs'>".$_GET['ref_commande']."-P".$i."</span>
+                    <button class='button_print' data-toggle='modal' data-target='#exampleModal' onclick='get_data(".$ids[$i-1].")'>
+                    <i class='fa fa-eye' id='icons_print' aria-hidden='true'></i></button><br>
+                    </div>";
+              $i=$i+1;
 
+              }
+            ?>
 
+            
 
-            <div class='print_container'>
-              <input type='text' id='palette' class='inputs' placeholder="Palette 1">
-              <button class='button_print' data-toggle="modal" data-target="#exampleModal"><i class="fa fa-eye"
-                  id='icons_print' aria-hidden="true"></i></button><br>
-            </div>
-
-            <div class='print_container'>
-              <input type='text' id='palette' class='inputs' placeholder="Palette 1">
-              <button class='button_print' data-toggle="modal" data-target="#exampleModal"><i class="fa fa-eye"
-                  id='icons_print' aria-hidden="true"></i></button><br>
-            </div>
 
           </div>
         </div>
@@ -82,16 +85,16 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
 
+        <div class="modal-body">
           <label>Allée</label>
-          <input type='text' class='details_empl'><br><br>
+          <input type='text' class='details_empl' id="allee"><br><br>
 
           <label>Rayon</label>
-          <input type='text' class='details_empl'><br><br>
+          <input type='text' class='details_empl' id="rayon"><br><br>
 
           <label>Etage</label>
-          <input type='text' class='details_empl'>
+          <input type='text' class='details_empl' id="etage">
 
 
           <div class='text-center'>

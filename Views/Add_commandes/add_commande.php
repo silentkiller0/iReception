@@ -44,11 +44,11 @@ include("../../Controllers/Login/auto_checking.php");
 
 
 
-            <input type='text' id='code_commande' class='inputs' placeholder="Code Commande">
-            <input type='text' id='qnt' class='inputs' placeholder='Quantité'>
+            <input type='text' id='code_commande' class='inputs' placeholder="Code Commande" required >
+            <input type='text' id='qnt' class='inputs' placeholder='Quantité' required >
             <button class='button' onclick='validate()'><i class="fa fa-arrow-right" id='icons'
                   aria-hidden="true"></i></button><br>
-                  <div style="color:red" class='text-center'><b id='test'></b></div>
+                  <div style="color:red" class='text-center'><b id='message'></b></div>
 
           </div>
         </div>

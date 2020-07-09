@@ -1,8 +1,12 @@
+<?php
+include("../../Controllers/Login/auto_checking.php");
+?>
 <script type="text/javascript" src="../../Ressources/bootstrap/js/jquery.js"></script>
 <link rel="stylesheet" href="../../Ressources/bootstrap/css/bootstrap.min.css">
 <script type="text/javascript" src="../../Ressources/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<script type="text/javascript" src="../../Controllers/List_commandes/Checking.js"></script>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -10,8 +14,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
 
   <title>iReception</title>
 </head>
@@ -31,9 +33,9 @@
           </div>
           <img src='../../Ressources/images/logo.png' class='logo' />
           <div class='inputs_container'>
-            <input id='num_commande' class='inputs' placeholder='Numéro de Commande'>
-
-            <a href="list_commande.php"><Button class='button_search'  id='icon'><i class="fa fa-search" aria-hidden="true"></i></Button></a>
+            <input id='ref_commande' class='inputs' placeholder='Référence de la Commande' value="CMD-50">
+            <Button class='button_search' id='icon' onclick='check()'><i class="fa fa-search" aria-hidden="true"></i></Button>
+            <div style="color:red" class='text-center'><b id='message'></b></div>
 
           </div>
         </div>

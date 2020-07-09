@@ -1,7 +1,7 @@
 <?php
 session_start();
 try {
-    $url = $_SESSION["server"]."/api/index.php/ireceptionapi/commandes?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=ref%3D%22".$_GET['code_commande']."%22&DOLAPIKEY=".$_SESSION["token"];
+    $url = $_SESSION["server"]."/api/index.php/ireceptionapi/commandes?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=ref%3D%22".$_GET['ref_commande']."%22&DOLAPIKEY=".$_SESSION["token"];
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_HEADER, 0);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -13,9 +13,10 @@ try {
         $error = curl_error($ch);
         $info = curl_getinfo($ch);
         if($info['http_code'] ==200){
-            echo 'not valide';
+            echo 'valide';
     }else{
-        echo 'valide';
+        echo 'not valide';
+
     }
 }
 } catch (\Throwable $th) {

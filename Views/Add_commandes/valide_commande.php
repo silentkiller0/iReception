@@ -5,6 +5,7 @@ include("../../Controllers/Login/auto_checking.php");
 <link rel="stylesheet" href="../../Ressources/bootstrap/css/bootstrap.min.css">
 <script type="text/javascript" src="../../Ressources/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="../../Controllers/Add_commandes/Sending.js"></script>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -26,37 +27,41 @@ include("../../Controllers/Login/auto_checking.php");
         <div class='form_login'>
           <div class='header_buttons'>
             <a href="add_commande.php"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
-                        <a href="../../Controllers/Login/logout.php"><i class="fa fa-power-off" aria-hidden="true" id='header_logout'></i></a>
+            <a href="../../Controllers/Login/logout.php"><i class="fa fa-power-off" aria-hidden="true"
+                id='header_logout'></i></a>
           </div>
           <img src='../../Ressources/images/logo.png' class='logo' />
           <div class='inputs_container text-center'>
 
             <div class='commande_ref'>
-              <label>Ref commande : </label><span><?php echo $_GET['code_commande']; ?></span>
+              <label>Réference : </label><span><?php echo $_GET['code_commande']; ?></span>
             </div>
+            <?php
+            if($_GET['qnt']){$qt=$_GET['qnt'];}else{$qt=0;}
+            ?>
+            <input type="hidden" value="<?php echo $qt; ?>" id="total_chq">
+            <div id="new_chq">
+              <?php
+            $i =1;
 
+            while($i<=intval($qt)){
 
-            <div class='print_container'>
-              <input type='text' id='palette' class='inputs' placeholder="Palette 1">
-              <button class='button_print'><i class="fa fa-print" id='icons_print' aria-hidden="true"></i></button><br>
-            </div>
+              echo "<div class='print_container' id='new_".$i."'>
+                    <span class='inputs'>".$_GET['code_commande']."-P".$i."</span>
+                    <button class='button_print'><i class='fa fa-print' id='icons_print' aria-hidden='true'></i></button><br>
+                    </div>";
+              $i=$i+1;
 
-
-
-            <div class='print_container'>
-              <input type='text' id='palette' class='inputs' placeholder="Palette 1">
-              <button class='button_print'><i class="fa fa-print" id='icons_print' aria-hidden="true"></i></button><br>
-            </div>
-
-            <div class='print_container'>
-              <input type='text' id='palette' class='inputs' placeholder="Palette 1">
-              <button class='button_print'><i class="fa fa-print" id='icons_print' aria-hidden="true"></i></button><br>
+              }
+            ?>
             </div>
 
             <div class='buttons_container text-center'>
-              <button class='button_nav'><i class="fa fa-minus" id='icons' aria-hidden="true"></i></button><br>
+              <button class='button_nav' onclick="remove()"><i class="fa fa-minus" id='icons'
+                  aria-hidden="true"></i></button><br>
               <button class='button'><i class="fa fa-check" id='icons' aria-hidden="true"></i></button><br>
-              <button class='button_nav'><i class="fa fa-plus" id='icons' aria-hidden="true"></i></button><br>
+              <button class='button_nav' onclick="add('<?php echo $_GET['code_commande']; ?>')"><i class="fa fa-plus"
+                  id='icons' aria-hidden="true"></i></button><br>
             </div>
           </div>
         </div>
@@ -140,10 +145,13 @@ include("../../Controllers/Login/auto_checking.php");
     margin-bottom: 15px;
     width: 100%;
     height: 40px;
-    padding-left: 15px;
     position: absolute;
     left: 0;
     margin-top: 10px;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px
   }
 
   .inputs_container {
