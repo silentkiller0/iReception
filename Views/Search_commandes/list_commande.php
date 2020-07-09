@@ -5,8 +5,6 @@
 <script type="text/javascript" src="../../Ressources/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -31,22 +29,38 @@
           <img src='../../Ressources/images/logo.png' class='logo' />
           <div class='inputs_container text-center'>
             <div class='commande_ref'>
-              <label>Code commande</label>
+              <label>Code commande : <?php echo $_GET['codeCommande']; ?> </label>
+
             </div>
 
-            <div class='print_container'>
-              <input type='text' id='palette' class='inputs' placeholder="Palette 1">
-              <button class='button_print'><i class="fa fa-print" id='icons_print' aria-hidden="true"></i></button><br>
-            </div>
 
-            <div class='print_container'>
-              <input type='text' id='palette' class='inputs' placeholder="Palette 2">
-              <button class='button_print'><i class="fa fa-print" id='icons_print' aria-hidden="true"></i></button><br>
-            </div>
-            <div class='print_container'>
-              <input type='text' id='palette' class='inputs' placeholder="Palette 3">
-              <button class='button_print'><i class="fa fa-print" id='icons_print' aria-hidden="true"></i></button><br>
-            </div>
+
+
+            <?php
+
+                // les ref de commandes nous arrive en String, on l'explode pour récuperer un tableau pour pouvoir l'exploiter
+
+                $ref = explode(",",$_GET['ligne_commande']);
+
+                $i =1;
+
+                while($i<=intval($_GET['qty'])){
+
+                  echo "<div class='print_container'>
+                        <span id='palette' class='inputs'>".$ref[$i-1]."</span>
+                        <button class='button_print'><i class='fa fa-print' id='icons_print' aria-hidden='true'></i></button><br>
+                        </div>";
+                  $i=$i+1;
+
+                  }
+
+                ?>
+
+
+
+
+
+
 
           </div>
         </div>
@@ -60,6 +74,7 @@
   </div>
 </body>
 </html>
+
 <style>
 
   #icon{
