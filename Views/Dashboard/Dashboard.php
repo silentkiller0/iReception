@@ -1,3 +1,7 @@
+<?php
+include("../../Controllers/Login/auto_checking.php");
+?>
+
 <script type="text/javascript" src="../../Ressources/bootstrap/js/jquery.js"></script>
 <link rel="stylesheet" href="../../Ressources/bootstrap/css/bootstrap.min.css">
 <script type="text/javascript" src="../../Ressources/bootstrap/js/bootstrap.min.js"></script>
@@ -26,11 +30,14 @@
       <div class="col-10 col-md-10">
 
         <div class='form_login text-center'>
+        <div class='header_buttons'>
+            <a href="../../Controllers/Login/logout.php"><i class="fa fa-power-off" aria-hidden="true" id='header_logout'></i></a>
+          </div>
           <img src='../../Ressources/images/logo.png' class='logo' />
           <div class='inputs_container text-center'>
-             <a href="rechercher_commande.php">   <button class='button'><i class="fa fa-search" id='icons' aria-hidden="true"></i></button><br>
-             <a href="add_commande.php"><button class='button'><i class="fa fa-plus" id='icons' aria-hidden="true"></i></button></a><br>
-              <a href="rechercher_list_commande.php"><button class='button'><i class="fa fa-list" id='icons' aria-hidden="true"></i></button><br>
+             <a href="../Search_commandes/rechercher_commande.php">   <button class='button'><i class="fa fa-search" id='icons' aria-hidden="true"></i></button><br>
+             <a href="../Add_commandes/add_commande.php"><button class='button'><i class="fa fa-plus" id='icons' aria-hidden="true"></i></button></a><br>
+              <a href="../List_commandes/rechercher_list_commande.php"><button class='button'><i class="fa fa-list" id='icons' aria-hidden="true"></i></button><br>
           </div>
         </div>
       </div>
@@ -69,7 +76,14 @@
     margin-top: 1%;
   }
 
-
+  #header_logout {
+    font-size: 25px;
+    color: #F27F54;
+    position: absolute;
+    right: -20px;
+    top: 45px;
+    z-index: 100;
+  }
 
   .inputs_container {
     margin-top: 5px;

@@ -24,7 +24,7 @@
         <div class='form_login'>
           <div class='header_buttons'>
             <a href="Dashboard.php"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
-            <i class="fa fa-power-off" aria-hidden="true" id='header_logout'></i>
+                        <a href="../../Controllers/Login/logout.php"><i class="fa fa-power-off" aria-hidden="true" id='header_logout'></i></a>
           </div>
           <img src='../../Ressources/images/logo.png' class='logo' />
           <div class='inputs_container text-center'>

@@ -1,6 +1,8 @@
 <?php
+session_start();
+$_SESSION["server"]=$_GET['server'];
 try {
-        $url=$_GET['server']."/api/index.php/login?login=".$_GET['username']."&password=".$_GET['password'];
+        $url=$_SESSION["server"]."/api/index.php/login?login=".$_GET['username']."&password=".$_GET['password'];
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -15,7 +17,10 @@ try {
                 $data = json_decode($content,true);
                 foreach ($data as $item){
                     if($item['code']==200){
-                        echo $item['token'];
+                        $_SESSION["token"]=$item['token'];
+                        /*header("Location: ../../Views/Login/login.php");
+                        exit();*/
+                        echo 'logged in';
                     }else{
                         echo 'login incorrect';
                     }

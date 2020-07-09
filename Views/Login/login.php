@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION["token"])){
+  header("Location: ../Dashboard/Dashboard.php");
+  exit();
+}
+?>
 <script type="text/javascript" src="../../Ressources/bootstrap/js/jquery.js"></script>
 <link rel="stylesheet" href="../../Ressources/bootstrap/css/bootstrap.min.css">
 <script type="text/javascript" src="../../Ressources/bootstrap/js/bootstrap.min.js"></script>
