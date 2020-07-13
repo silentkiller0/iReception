@@ -1,5 +1,6 @@
-function get_data(id) {
-    $.ajax({
+function show_code(ref) {
+    alert(ref);
+    /*$.ajax({
         type: "GET",
         url: "../../Controllers/List_commandes/get_emplacements.php",
         data: {
@@ -13,5 +14,7 @@ function get_data(id) {
             $('#etage').val(data[2]);
 
         }
-    });
+    });*/
+
 }
+

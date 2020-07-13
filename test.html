@@ -10,10 +10,10 @@
 <script>
     $('.barcode').attr('jsbarcode-value', 'cmd-50-p7')
     JsBarcode(".barcode").init();
-    //print(JsBarcode(".barcode").init());
-    /*
-            popup = window.open();
-            popup.document.write(JsBarcode(".barcode").init());
-            popup.focus(); //required for IE
-            popup.print();*/
+    print(JsBarcode(".barcode").init());
+/*
+                popup = window.open();
+                popup.document.write(JsBarcode(".barcode").init());
+                popup.focus(); //required for IE
+                popup.print();*/
 </script>

@@ -1,10 +1,11 @@
 
 
+
+
 <script type="text/javascript" src="../../Ressources/bootstrap/js/jquery.js"></script>
 <link rel="stylesheet" href="../../Ressources/bootstrap/css/bootstrap.min.css">
 <script type="text/javascript" src="../../Ressources/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script type="text/javascript" src="../../Controllers/Search_commandes/show_code.js"></script>
 
 
 <!DOCTYPE html>
@@ -48,13 +49,13 @@
                 while($i<=intval($_GET['qty'])){
 
                   echo "<div class='print_container'>
-                        <span id='palette' class='inputs'>".strval($ref[$i-1])."</span>
-                        <button class='button_print' onclick='show_code(".$ref[0].")'><i class='fa fa-print' id='icons_print' aria-hidden='true'></i></button><br>
+                        <span id='palette' class='inputs'>".$ref[$i-1]."</span>
+                        <button class='button_print'><i class='fa fa-print' id='icons_print' aria-hidden='true'></i></button><br>
                         </div>";
                   $i=$i+1;
 
                   }
-           
+
                 ?>
 
 
