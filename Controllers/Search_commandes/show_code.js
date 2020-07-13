@@ -1,5 +1,8 @@
-function show_code(ref) {
-    alert(ref);
+function show_code(ref_Ligne_Commadnde) {
+    //alert(ref);
+    
+    window.location = "../../Views/Search_commandes/print_palette.php?ref_Ligne_Commadnde="+ref_Ligne_Commadnde;
+    
     /*$.ajax({
         type: "GET",
         url: "../../Controllers/List_commandes/get_emplacements.php",

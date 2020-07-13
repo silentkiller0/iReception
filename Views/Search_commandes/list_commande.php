@@ -49,7 +49,7 @@
 
                   echo "<div class='print_container'>
                         <span id='palette' class='inputs'>".strval($ref[$i-1])."</span>
-                        <button class='button_print' onclick='show_code(".$ref[0].")'><i class='fa fa-print' id='icons_print' aria-hidden='true'></i></button><br>
+                        <button class='button_print' id='ref_Ligne_commande' onclick='show_code(".$ref[0].")'><i class='fa fa-print' id='icons_print' aria-hidden='true'></i></button><br>
                         </div>";
                   $i=$i+1;
 

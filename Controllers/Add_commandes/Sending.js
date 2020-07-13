@@ -42,3 +42,30 @@ function remove() {
     }
     console.log(last_chq_no);
 }
+
+function valider(fournisseurs){
+
+        console.log($('#code_commande2').text());
+        var qt = $(".print_container *").length/4;
+        alert(qt);
+        $.ajax({
+        type: "GET",
+        url: "../../Controllers/Add_commandes/valide_commandes.php",
+        data: {
+            fournisseurs: fournisseurs,
+            code_commande: $('#code_commande2').text(),
+            qnt: qt
+        },
+        datatype: 'html',
+        success: function (response) {
+            if (response == 'valide') {
+                $('#test').text('ok');
+                console.log(response);
+            } else {
+                $('#test').text('erreur');
+                console.log(response);
+            }
+        }
+});
+
+}

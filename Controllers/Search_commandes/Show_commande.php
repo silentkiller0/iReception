@@ -21,7 +21,7 @@ try {
                 $tab = array();
                 foreach ($data as $item){
 
-                    $file=file_get_contents('http://82.253.71.109/prod/bdc_v11_04/api/index.php/ireceptionapi/ligne_commande?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=id_commande%3D'.$item['id'].'&DOLAPIKEY=ecee5974867c0d45c5b8475a0cc2b9db2182f080');
+                    $file=file_get_contents('http://82.253.71.109/prod/bdc_v11_04/api/index.php/ireceptionapi/ligne_commande?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=id_commande='.$item['id'].'&DOLAPIKEY=ecee5974867c0d45c5b8475a0cc2b9db2182f080');
                     $data2 = json_decode($file,true);
                     array_push($tab,$item['ref']);
                     array_push($tab,$item['qty']);
