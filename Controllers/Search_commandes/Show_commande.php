@@ -20,24 +20,41 @@ try {
 
                 $tab = array();
                 foreach ($data as $item){
+                    
+                    $ch = curl_init();
+                    $info = curl_getinfo($ch);
 
-                    $file=file_get_contents('http://82.253.71.109/prod/bdc_v11_04/api/index.php/ireceptionapi/ligne_commande?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=id_commande='.$item['id'].'&DOLAPIKEY=ecee5974867c0d45c5b8475a0cc2b9db2182f080');
+                    if(file_get_contents('http://82.253.71.109/prod/bdc_v11_04/api/index.php/ireceptionapi/commandes?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=ref%3D%27'.$item['ref'].'%27&DOLAPIKEY=ecee5974867c0d45c5b8475a0cc2b9db2182f080')){
+                        $file = file_get_contents('http://82.253.71.109/prod/bdc_v11_04/api/index.php/ireceptionapi/commandes?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=ref%3D%27'.$item['ref'].'%27&DOLAPIKEY=ecee5974867c0d45c5b8475a0cc2b9db2182f080');
+                    }else{
+                        echo 'commande non existante';
+                    }
+                 
+                     if(file_get_contents('http://82.253.71.109/prod/bdc_v11_04/api/index.php/ireceptionapi/ligne_commande?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=id_commande%'.$item['id'].'%3D%2020&DOLAPIKEY=ecee5974867c0d45c5b8475a0cc2b9db2182f080')){
+                          $file2 = file_get_contents('http://82.253.71.109/prod/bdc_v11_04/api/index.php/ireceptionapi/ligne_commande?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=id_commande%'.$item['id'].'%3D%2020&DOLAPIKEY=ecee5974867c0d45c5b8475a0cc2b9db2182f080');
+                     }else{
+                         echo 'pas de ligne commande';
+                     }
+                    
                     $data2 = json_decode($file,true);
+                    $data3 = json_decode($file2,true);
                     array_push($tab,$item['ref']);
                     array_push($tab,$item['qty']);
                     array_push($tab,$item['id']);
 
 
                     $tabref = array();
-                    foreach($data2 as $i){
+                  
+                    foreach($data3 as $i){
                       array_push($tabref,$i['ref']);
                     }
+                   //var_dump($data3);
                     array_push($tab,$tabref);
 
                     $json = json_encode($tab);
                     print_r($json);
 
-            }
+                  }
         }else{
             echo 0;
         }
