@@ -6,6 +6,7 @@ include("../../Controllers/Login/auto_checking.php");
 <script type="text/javascript" src="../../Ressources/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="../../Controllers/Add_commandes/Sending.js"></script>
+<script type="text/javascript" src="../../Controllers/Search_commandes/show_code.js"></script>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -37,20 +38,41 @@ include("../../Controllers/Login/auto_checking.php");
               <label>Réference : </label><span id='code_commande2'><?php echo $_GET['code_commande']; ?></span>
             </div>
             <?php
-            if($_GET['qnt']){$qt=$_GET['qnt'];}else{$qt=0;}
+            if($_GET['qnt']){
+              $qt=$_GET['qnt'];
+            }else{
+              $qt=0;
+            };
             ?>
             <input type="hidden" value="<?php echo $qt; ?>" id="total_chq">
             <div id="new_chq">
               <?php
-            $i =1;
+
+              
+              $i =1;
+
 
             while($i<=intval($qt)){
+              ?>
+              
+            <script>
+              var ref ="<?php echo $_GET['code_commande'].'-P'; ?>";
+              var ref_encoded=encodeURI(ref);
+            </script>
 
+            <?php
+              //onclick='show_code('".$_GET['code_commande']."-P".$i."')'
               echo "<div class='print_container' id='new_".$i."'>
-                    <span class='inputs'>".$_GET['code_commande']."-P".$i."</span>
-                    <button class='button_print'><i class='fa fa-print' id='icons_print' aria-hidden='true'></i></button><br>
-                    </div>";
+                    <span class='inputs'>".$_GET['code_commande']."-P".$i."</span>        
+                    <button class='button_print' id='ref_Ligne_commande' onclick='show_code(ref_encoded+".$i.")'><i class='fa fa-print' id='icons_print' aria-hidden='true'></i></button><br>
+                     </div>";
               $i=$i+1;
+
+
+            /*  echo "<div class='print_container'>
+              <span id='palette' class='inputs'>".strval($ref[$i-1])."</span>
+              <button class='button_print' id='ref_Ligne_commande' onclick='show_code(".$ref[0].")'><i class='fa fa-print' id='icons_print' aria-hidden='true'></i></button><br>
+              </div>";*/
 
               }
 
@@ -60,7 +82,7 @@ include("../../Controllers/Login/auto_checking.php");
             <div class='buttons_container text-center'>
               <button class='button_nav' onclick="remove()"><i class="fa fa-minus" id='icons'
                   aria-hidden="true"></i></button><br>
-              <button class='button' onclick="valider(<?php echo $_GET['fournisseurs']; ?>)"><i class="fa fa-check" id='icons' aria-hidden="true"></i></button><br>
+              <button class='button' id='valider' onclick="valider(<?php echo $_GET['fournisseurs']; ?>)"><i class="fa fa-check" id='icons' aria-hidden="true"></i></button><br>
               <button class='button_nav' onclick="add('<?php echo $_GET['code_commande']; ?>')"><i class="fa fa-plus"
                   id='icons' aria-hidden="true"></i></button><br>
             </div>

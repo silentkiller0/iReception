@@ -45,6 +45,10 @@ function remove() {
 
 function valider(fournisseurs){
 
+        $('#valider').prop('disabled',true);
+        $('#valider').css("background-color","gray");
+        $('#valider').hide();
+
         console.log($('#code_commande2').text());
         var qt = $(".print_container *").length/4;
         alert(qt);
@@ -67,5 +71,8 @@ function valider(fournisseurs){
             }
         }
 });
+       
+    
+
 
 }

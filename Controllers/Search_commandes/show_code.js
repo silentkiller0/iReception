@@ -1,7 +1,6 @@
 function show_code(ref_Ligne_Commadnde) {
-    //alert(ref);
-    
-    window.location = "../../Views/Search_commandes/print_palette.php?ref_Ligne_Commadnde="+ref_Ligne_Commadnde;
+    alert(ref_Ligne_Commadnde);
+    window.location = "../../Views/Search_commandes/print_palette.php?ref_Ligne_Commande="+ref_Ligne_Commadnde;
     
     /*$.ajax({
         type: "GET",
