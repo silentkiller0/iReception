@@ -27,7 +27,7 @@ include("../../Controllers/Login/auto_checking.php");
 
         <div class='form_login'>
           <div class='header_buttons'>
-            <a href="Dashboard.php"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
+            <a href="javascript:history.go(-1)"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
                         <a href="../../Controllers/Login/logout.php"><i class="fa fa-power-off" aria-hidden="true" id='header_logout'></i></a>
           </div>
           <img src='../../Ressources/images/logo.png' class='logo' />
@@ -94,12 +94,17 @@ include("../../Controllers/Login/auto_checking.php");
           <input type='text' class='details_empl' id="rayon"><br><br>
 
           <label>Etage</label>
-          <input type='text' class='details_empl' id="etage">
+          <input type='text' class='details_empl' id="etage"><br><br>
+          <input type='text' hidden id="id_emplacement"><br><br>
 
 
           <div class='text-center'>
-            <button class='button_modal'><i class="fa fa-check" id='icons' aria-hidden="true"></i></button><br>
+            <button class='button_modal' onClick='update_data()'><i class="fa fa-edit" id='icons' aria-hidden="true"></i></button><br>
           </div>
+
+          <div style="color:red" class='text-center'><b id='message'></b></div>
+
+
         </div>
 
       </div>

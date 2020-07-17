@@ -27,7 +27,7 @@
 
 
           <div class='header_buttons'>
-            <a href="Dashboard.php"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
+            <a href="javascript:history.go(-1)"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
                         <a href="../../Controllers/Login/logout.php"><i class="fa fa-power-off" aria-hidden="true" id='header_logout'></i></a>
           </div>
           <img src='../../Ressources/images/logo.png' class='logo' />

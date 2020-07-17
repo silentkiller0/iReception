@@ -10,6 +10,7 @@ try {
         array_push($tab,$item['allee']);
         array_push($tab,$item['rayon']);
         array_push($tab,$item['etage']);
+        array_push($tab,$item['id']);
     }
 
     $json = json_encode($tab);
