@@ -26,6 +26,7 @@ try {
 
 
                 foreach ($data as $item){
+<<<<<<< HEAD
 
                     $ch = curl_init();
                     $info = curl_getinfo($ch);
@@ -50,6 +51,10 @@ try {
                                 $data2 = json_decode($content3,true);
 
                     $file=file_get_contents('http://82.253.71.109/prod/bdc_v11_04/api/index.php/ireceptionapi/ligne_commande?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=id_commande%3D%27157%27&DOLAPIKEY=ecee5974867c0d45c5b8475a0cc2b9db2182f080');
+=======
+
+                    $file=file_get_contents('http://82.253.71.109/prod/bdc_v11_04/api/index.php/ireceptionapi/ligne_commande?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=id_commande='.$item['id'].'&DOLAPIKEY=ecee5974867c0d45c5b8475a0cc2b9db2182f080');
+>>>>>>> parent of 4d6de4d... affichage ligne commande fix
                     $data2 = json_decode($file,true);
                     array_push($tab,$item['ref']);
                     array_push($tab,$item['qty']);
@@ -68,11 +73,14 @@ try {
 
                                      
 
+<<<<<<< HEAD
                                 }
                         }
                         //var_dump($data);       
                         return $data;
 
+=======
+>>>>>>> parent of 4d6de4d... affichage ligne commande fix
             }
         }else{
     
