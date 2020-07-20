@@ -1,13 +1,12 @@
 
 <?php
 try {
-<<<<<<< HEAD
+
        // $url= $_SESSION["server"]."/api/index.php/ireceptionapi/commandes?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=ref%3D".$_GET['refCommande'];
         $url ="http://82.253.71.109/prod/bdc_v11_04/api/index.php/ireceptionapi/commandes?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=ref%3D%27cmd-01%27";
-=======
+
         $url="http://82.253.71.109/prod/bdc_v11_04/api/index.php/ireceptionapi/commandes?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=ref%3D%27".$_GET['refCommande']."%27&DOLAPIKEY=ecee5974867c0d45c5b8475a0cc2b9db2182f080";
 
->>>>>>> parent of 5ed2426... last edit
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -29,12 +28,7 @@ try {
 
                 $tab = array();
                 foreach ($data as $item){
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-                    
->>>>>>> parent of 5ed2426... last edit
                     $ch = curl_init();
                     $info = curl_getinfo($ch);
 
@@ -50,7 +44,7 @@ try {
                          echo 'pas de ligne commande';
                      }
                     
-<<<<<<< HEAD
+
                     
                            // $url3= $_SESSION["server"]."/api/index.php/ireceptionapi/ligne_commande?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=id_commande%3D%27".$item['id']."%27&DOLAPIKEY=".$_SESSION["token"];
                             $url3 = "http://82.253.71.109/prod/bdc_v11_04/api/index.php/ireceptionapi/ligne_commande?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=id_commande%3D%27157%27";
@@ -69,10 +63,10 @@ try {
                                 $data2 = json_decode($content3,true);
 
                     $file=file_get_contents('http://82.253.71.109/prod/bdc_v11_04/api/index.php/ireceptionapi/ligne_commande?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=id_commande%3D%27157%27&DOLAPIKEY=ecee5974867c0d45c5b8475a0cc2b9db2182f080');
-=======
+
 
                     $file=file_get_contents('http://82.253.71.109/prod/bdc_v11_04/api/index.php/ireceptionapi/ligne_commande?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=id_commande='.$item['id'].'&DOLAPIKEY=ecee5974867c0d45c5b8475a0cc2b9db2182f080');
->>>>>>> parent of 4d6de4d... affichage ligne commande fix
+
                     $data2 = json_decode($file,true);
                     array_push($tab,$item['ref']);
                     array_push($tab,$item['qty']);
@@ -91,19 +85,10 @@ try {
 
                                      
 
-<<<<<<< HEAD
                                 }
                         }
                         //var_dump($data);       
                         return $data;
-=======
-                    $data2 = json_decode($file,true);
-                    $data3 = json_decode($file2,true);
-                    array_push($tab,$item['ref']);
-                    array_push($tab,$item['qty']);
-                    array_push($tab,$item['id']);
-
-
                     $tabref = array();
                   
                     foreach($data3 as $i){
@@ -114,10 +99,7 @@ try {
 
                     $json = json_encode($tab);
                     print_r($json);
->>>>>>> parent of 5ed2426... last edit
 
-=======
->>>>>>> parent of 4d6de4d... affichage ligne commande fix
             }
         }else{
     

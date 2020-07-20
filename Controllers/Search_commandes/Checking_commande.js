@@ -17,20 +17,17 @@ function check() {
             if(response == 0){
               $('#check_message').html('Commande inexistante');
             }else{
-<<<<<<< HEAD
-<<<<<<< HEAD
 
             console.log(response);
-=======
->>>>>>> parent of 4d6de4d... affichage ligne commande fix
+
             const info_commande = JSON.parse(response)
             console.log(info_commande);
-=======
+
             //console.log(response);
             const info_commande = JSON.parse(response)
            
             console.log(info_commande[3]);
->>>>>>> parent of 5ed2426... last edit
+
             window.location = "../../Views/Search_commandes/list_commande.php?codeCommande="+info_commande[0]+"&qty="+info_commande[1]+"&id="+info_commande[2]+"&ligne_commande="+info_commande[3]
           }
         }
