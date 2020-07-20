@@ -29,12 +29,12 @@
 
         <div class='form_login'>
           <div class='header_buttons'>
-            <a href="javascript:history.go(-1)"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
+            <a href="Dashboard.php"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
                         <a href="../../Controllers/Login/logout.php"><i class="fa fa-power-off" aria-hidden="true" id='header_logout'></i></a>
           </div>
           <img src='../../Ressources/images/logo.png' class='logo' />
           <div class='inputs_container'>
-            <input  id='nb_commande' class='inputs' placeholder='Numero de commande' value=''>
+            <input  id='nb_commande' class='inputs' placeholder='Numero de commande'>
             <div style="color:red" class='text-center'><b id='check_message'></b></div>
             <Button class='button_search' id='icon' onclick="check()"><i class="fa fa-search" aria-hidden="true"></i></Button>
 

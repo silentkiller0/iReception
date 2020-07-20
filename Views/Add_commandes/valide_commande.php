@@ -18,23 +18,8 @@ include("../../Controllers/Login/auto_checking.php");
 </head>
 
 <body>
-<?php
-            if($_GET['qnt']){
-              $qt=$_GET['qnt'];
-            }else{
-              $qt=0;
-            };
-            ?>
-<script>
-              var ref ="<?php echo $_GET['code_commande'].'-P'; ?>";
-              var refcmd ="<?php echo $_GET['code_commande']; ?>";
-              var ref_encoded=encodeURI(ref);
-              var ref_encodedcmd=encodeURI(refcmd);
-              var qt=$('#total_chq').val();
-console.log(qt);
 
-//show_code(ref_encodedcmd,qt)
-            </script>
+
   <div class="container">
     <div class="row">
       <div class="col-1 col-md-1"></div>
@@ -42,22 +27,24 @@ console.log(qt);
 
         <div class='form_login'>
           <div class='header_buttons'>
-            <a href="javascript:history.go(-1)"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
+            <a href="add_commande.php"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
             <a href="../../Controllers/Login/logout.php"><i class="fa fa-power-off" aria-hidden="true"
                 id='header_logout'></i></a>
           </div>
           <img src='../../Ressources/images/logo.png' class='logo' />
           <div class='inputs_container text-center'>
 
-
-          <input type="text" value="<?php echo $qt; ?>" id="total_chq">
-              <div class='print_container'>
-                    <span class='inputs_cmd'>Réference : <?php echo $_GET['code_commande']; ?></span>        
-                    <button class='button_print_cmd' id='ref_Ligne_commande' onclick='show_code(ref_encodedcmd)'><i class='fa fa-print' id='icons_print' aria-hidden='true'></i></button><br>
-                     </div>
-
-            
-            
+            <div class='commande_ref'>
+              <label>Réference : </label><span id='code_commande2'><?php echo $_GET['code_commande']; ?></span>
+            </div>
+            <?php
+            if($_GET['qnt']){
+              $qt=$_GET['qnt'];
+            }else{
+              $qt=0;
+            };
+            ?>
+            <input type="hidden" value="<?php echo $qt; ?>" id="total_chq">
             <div id="new_chq">
               <?php
 
@@ -68,13 +55,16 @@ console.log(qt);
             while($i<=intval($qt)){
               ?>
               
-            
+            <script>
+              var ref ="<?php echo $_GET['code_commande'].'-P'; ?>";
+              var ref_encoded=encodeURI(ref);
+            </script>
 
             <?php
               //onclick='show_code('".$_GET['code_commande']."-P".$i."')'
               echo "<div class='print_container' id='new_".$i."'>
                     <span class='inputs'>".$_GET['code_commande']."-P".$i."</span>        
-                    <button class='button_print' id='ref_Ligne_commande'><i class='fa fa-print' id='icons_print' aria-hidden='true'></i></button><br>
+                    <button class='button_print' id='ref_Ligne_commande' onclick='show_code(ref_encoded+".$i.")'><i class='fa fa-print' id='icons_print' aria-hidden='true'></i></button><br>
                      </div>";
               $i=$i+1;
 
@@ -90,10 +80,10 @@ console.log(qt);
             </div>
 
             <div class='buttons_container text-center'>
-              <button class='button_nav' id='moins' onclick="remove()"><i class="fa fa-minus" id='icons'
+              <button class='button_nav' onclick="remove()"><i class="fa fa-minus" id='icons'
                   aria-hidden="true"></i></button><br>
               <button class='button' id='valider' onclick="valider(<?php echo $_GET['fournisseurs']; ?>)"><i class="fa fa-check" id='icons' aria-hidden="true"></i></button><br>
-              <button class='button_nav' id='plus' onclick="add('<?php echo $_GET['code_commande']; ?>')"><i class="fa fa-plus"
+              <button class='button_nav' onclick="add('<?php echo $_GET['code_commande']; ?>')"><i class="fa fa-plus"
                   id='icons' aria-hidden="true"></i></button><br>
             </div>
           </div>
@@ -134,13 +124,12 @@ console.log(qt);
   .commande_ref {
     background-color: #384D61;
     height: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border-style: solid;
     border-width: 2px;
     border-color: #F27F54;
     border-radius: 10px;
     color: #F27F54;
- 
   }
 
   .print_container {
@@ -148,8 +137,6 @@ console.log(qt);
     flex-direction: row;
     margin-bottom: 40px;
   }
-
-  
 
   .buttons_container {
     display: flex;
@@ -175,9 +162,6 @@ console.log(qt);
     z-index: 100;
   }
 
-
-
-
   .inputs {
     border-style: solid;
     border-width: 2px;
@@ -193,26 +177,6 @@ console.log(qt);
     padding-left: 10px;
     padding-top: 5px;
     padding-bottom: 5px
-  }
-
-
-  .inputs_cmd{
-    border-style: solid;
-    border-width: 2px;
-    border-color: #F27F54;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    width: 100%;
-    height: 40px;
-    position: absolute;
-    left: 0;
-    margin-top: 10px;
-    text-align: left;
-    padding-left: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color:#384D61;
-    color:#F27F54;
   }
 
   .inputs_container {
@@ -267,22 +231,6 @@ console.log(qt);
     position: absolute;
     right: -5;
   }
-
-
-  .button_print_cmd {
-    background-color: 'gray';
-    width: 60px;
-    border-style: solid;
-    border-color: #384D61;
-    border-width: 3px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    color: #384D61;
-    height: 60px;
-    position: absolute;
-    right: -5;
-  }
-
 
   .footer {
     position: absolute;

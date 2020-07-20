@@ -24,8 +24,7 @@
 
 
           <div class='header_buttons'>
-            <a href="javascript:history.go(-1)"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
-           
+            <a href="Dashboard.php"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
                         <a href="../../Controllers/Login/logout.php"><i class="fa fa-power-off" aria-hidden="true" id='header_logout'></i></a>
           </div>
           <img src='../../Ressources/images/logo.png' class='logo' />
@@ -34,12 +33,8 @@
               <label>Code commande : <?php echo $_GET['codeCommande']; ?> </label>
 
             </div>
-    
 
-            <script>
-              var tab = "<?php echo $_GET['ligne_commande']; ?>".split(",");
-              
-            </script>
+
 
 
             <?php
@@ -54,9 +49,8 @@
 
                   echo "<div class='print_container'>
                         <span id='palette' class='inputs'>".strval($ref[$i-1])."</span>
-                        <button class='button_print' id='ref_Ligne_commande' onclick='show_code(tab[".($i-1)."])'><i class='fa fa-print' id='icons_print' aria-hidden='true'></i></button><br>
+                        <button class='button_print' id='ref_Ligne_commande' onclick='show_code(".$ref[0].")'><i class='fa fa-print' id='icons_print' aria-hidden='true'></i></button><br>
                         </div>";
-
                   $i=$i+1;
 
                   }
