@@ -10,7 +10,7 @@ function check() {
             datatype: 'html',
             success: function (response) {
                 if (response == 'valide') {
-                    getdata();
+                  getdata();
                 } else {
                     $('#message').text('Réf Commande incorrect');
                 }
@@ -31,6 +31,7 @@ function getdata() {
         },
         datatype: 'html',
         success: function (response) {
+            console.log(response);
             const data = JSON.parse(response);
             console.log(data);
             window.location = "../../Views/List_commandes/show_commande.php?ref_commande=" + $('#ref_commande').val() + "&qty=" + data[1] + "&id_empl=" + data[2];

@@ -1,11 +1,15 @@
 
-
-
-
+<?php 
+session_start();
+?>
 <script type="text/javascript" src="../../Ressources/bootstrap/js/jquery.js"></script>
 <link rel="stylesheet" href="../../Ressources/bootstrap/css/bootstrap.min.css">
 <script type="text/javascript" src="../../Ressources/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="../../Controllers/Search_commandes/show_code.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.8.0/JsBarcode.all.js"></script>
+
 
 
 <!DOCTYPE html>
@@ -24,24 +28,29 @@
         <div class='form_login'>
 
 
+
+</SCRIPT>
+<!--
+$_SESSION["qty"]
+
+Views/Add_commandes/valide_commande.php?fournisseurs=5&code_commande=cmd-087&qnt=2
+  -->
+
           <div class='header_buttons'>
             <a href="javascript:history.go(-1)"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
-
-            
                         <a href="../../Controllers/Login/logout.php"><i class="fa fa-power-off" aria-hidden="true" id='header_logout'></i></a>
           </div>
           <img src='../../Ressources/images/logo.png' class='logo' />
           <div class='inputs_container text-center'>
-            <div class='commande_ref'>
-              <label>Code commande : <?php echo $_GET['codeCommande']; ?> </label>
+            <div  class='commande_ref'>
+              <label id="barcode_"><?php echo $_GET['ref_Ligne_Commande'];?></label>
 
             </div>
 
 
 
-
             <?php
-
+                /*
                 // les ref de commandes nous arrive en String, on l'explode pour récuperer un tableau pour pouvoir l'exploiter
 
                 $ref = explode(",",$_GET['ligne_commande']);
@@ -51,19 +60,45 @@
                 while($i<=intval($_GET['qty'])){
 
                   echo "<div class='print_container'>
-                        <span id='palette' class='inputs'>".$ref[$i-1]."</span>
-                        <button class='button_print'><i class='fa fa-print' id='icons_print' aria-hidden='true'></i></button><br>
+                        <span id='palette' class='inputs'>".strval($ref[$i-1])."</span>
+                        <button class='button_print' onclick='show_code(".$ref[0].")'><i class='fa fa-print' id='icons_print' aria-hidden='true'></i></button><br>
                         </div>";
                   $i=$i+1;
 
-                  }
-
+                  }*/
+           
                 ?>
 
 
+        <div class=text-center>
+
+            <div class='print_container '>
+              
+                    <span id='palette' class='inputs text-center'> <svg class="barcode" id='bc' jsbarcode-format="CODE128" jsbarcode-value="" jsbarcode-textmargin="0" jsbarcode-fontoptions="bold"></svg></span>
+
+                 
+                   
 
 
+                    <script>
+                       
+                       console.log($('.commande_ref').text())
+                        $('.barcode').attr('jsbarcode-value',$('#barcode_').text());
+                        JsBarcode(".barcode").init();
+                        print(JsBarcode(".barcode").init());
+                    /*
+                                    popup = window.open();
+                                    popup.document.write(JsBarcode(".barcode").init());
+                                    popup.focus(); //required for IE
+                                    popup.print();*/
+                    </script>
 
+                </div><br>
+                <button class='button_print text-center' onclick='print()'><i class='fa fa-print' id='icons_print' aria-hidden='true'></i></button><br>
+                  
+
+            </div>
+                
 
 
           </div>
@@ -72,6 +107,7 @@
       <div class="col-1 col-md-1"></div>
     </div>
   </div>
+ 
   <div class='footer'>
     <div class='footer_rad'></div>
     <center><label class='footer_text'>© Produit développé par Anexys</label></center>
@@ -81,11 +117,32 @@
 
 <style>
 
+
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .print_container,  .print_container *{
+        visibility: visible;
+    }
+
+}
+ 
+
+
+
+  #bc{
+      margin-top: 3%;
+      width:100%;
+  }
+    
   #icon{
     font-size: 40px;
   }
 
-
+  
   .form_login {
     margin-top: 30%;
     width: 100%;
@@ -108,7 +165,7 @@
   .print_container {
     display: flex;
     flex-direction: row;
-    margin-bottom: 40px;
+    margin-bottom: 40px;  
   }
   .buttons_container {
     display: flex;
@@ -136,13 +193,13 @@
     border-width: 2px;
     border-color: #F27F54;
     border-radius: 10px;
-    margin-bottom: 15px;
-    width: 100%;
-    height: 40px;
-    padding-left: 15px;
-    position: absolute;
+    margin-bottom: 0px;
+    width: auto;
+    height: 200px;
+    padding-left: 0px;
     left: 0;
     margin-top: 10px;
+   
   }
   .inputs_container {
     margin-top: 10px;
@@ -188,8 +245,7 @@
     margin-bottom: 10px;
     color: #384D61;
     height: 60px;
-    position: absolute;
-    right: -5;
+    bottom:20;
   }
   .footer {
     position: absolute;

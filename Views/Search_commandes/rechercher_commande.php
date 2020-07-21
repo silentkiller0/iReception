@@ -29,14 +29,14 @@
 
         <div class='form_login'>
           <div class='header_buttons'>
-            <a href="Dashboard.php"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
+            <a href="javascript:history.go(-1)"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
                         <a href="../../Controllers/Login/logout.php"><i class="fa fa-power-off" aria-hidden="true" id='header_logout'></i></a>
           </div>
           <img src='../../Ressources/images/logo.png' class='logo' />
           <div class='inputs_container'>
-            <input  id='nb_commande' class='inputs' placeholder='Numero de commande'>
+            <input  id='nb_commande' class='inputs' placeholder='Numero de commande' value=''>
             <div style="color:red" class='text-center'><b id='check_message'></b></div>
-            <Button class='button_search' id='icon' onclick="check()"><i class="fa fa-search" aria-hidden="true"></i></Button>
+            <center><Button class='button_search' id='icon' onclick="check()"><i class="fa fa-search" aria-hidden="true"></i></Button></center>
 
           </div>
         </div>
@@ -116,7 +116,7 @@
     border-style : solid;
     border-color: #34495E;
 
-    margin-left: 50px;
+    margin-left: 0px;
     border-width: 3px;
     border-radius: 50%;
     margin-top: 20px;

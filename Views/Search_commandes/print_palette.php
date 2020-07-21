@@ -1,5 +1,7 @@
 
-
+<?php 
+session_start();
+?>
 <script type="text/javascript" src="../../Ressources/bootstrap/js/jquery.js"></script>
 <link rel="stylesheet" href="../../Ressources/bootstrap/css/bootstrap.min.css">
 <script type="text/javascript" src="../../Ressources/bootstrap/js/bootstrap.min.js"></script>
@@ -26,16 +28,17 @@
         <div class='form_login'>
 
 
-          <div class='header_buttons'>
-            <a href="Dashboard.php"><i class="fa fa-arrow-left" aria-hidden="true" id='header_back'></i></a>
-                        <a href="../../Controllers/Login/logout.php"><i class="fa fa-power-off" aria-hidden="true" id='header_logout'></i></a>
-          </div>
-          <img src='../../Ressources/images/logo.png' class='logo' />
-          <div class='inputs_container text-center'>
-            <div  class='commande_ref'>
-              <label id="barcode_"><?php echo $_GET['ref_Ligne_Commande'];?></label>
 
-            </div>
+</SCRIPT>
+<!--
+$_SESSION["qty"]
+
+Views/Add_commandes/valide_commande.php?fournisseurs=5&code_commande=cmd-087&qnt=2
+  -->
+
+        
+          <div class='inputs_container text-center'>
+              <label hidden id="barcode_"><?php echo $_GET['ref_Ligne_Commande'];?></label>
 
 
 
@@ -83,9 +86,7 @@
                                     popup.print();*/
                     </script>
 
-                </div><br>
-                <button class='button_print text-center' onclick='print()'><i class='fa fa-print' id='icons_print' aria-hidden='true'></i></button><br>
-                  
+                </div><br>    
 
             </div>
                 
@@ -98,22 +99,18 @@
     </div>
   </div>
  
-  <div class='footer'>
-    <div class='footer_rad'></div>
-    <center><label class='footer_text'>© Produit développé par Anexys</label></center>
-  </div>
 </body>
 </html>
 
 <style>
 
 
-
+/* 
 @media print {
     body * {
         visibility: hidden;
     }
-
+*/
     .print_container,  .print_container *{
         visibility: visible;
     }
