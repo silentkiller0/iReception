@@ -15,9 +15,10 @@ function check() {
             }else{
             console.log(response);
             const info_commande = JSON.parse(response)
+            console.log(info_commande);
            
             
-            window.location = "../../Views/Search_commandes/list_commande.php?codeCommande="+info_commande[0]+"&qty="+info_commande[1]+"&id="+info_commande[2]+"&ligne_commande="+info_commande[3]
+            window.location = "../../Views/Search_commandes/list_commande.php?codeCommande="+info_commande[0]+"&qty="+info_commande[1]+"&id="+info_commande[2]+"&ligne_commande="+info_commande[4]+"&description="+info_commande[3]
           }
         }
     });

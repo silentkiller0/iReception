@@ -34,7 +34,7 @@ function getdata() {
             console.log(response);
             const data = JSON.parse(response);
             console.log(data);
-            window.location = "../../Views/List_commandes/show_commande.php?ref_commande=" + $('#ref_commande').val() + "&qty=" + data[1] + "&id_empl=" + data[2];
+            window.location = "../../Views/List_commandes/show_commande.php?ref_commande=" + $('#ref_commande').val() + "&qty=" + data[1] + "&id_empl=" + data[3]+"&description="+data[2];
 
         }
     });

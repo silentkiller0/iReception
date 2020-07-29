@@ -6,12 +6,13 @@ function validate() {
             data: {
                 fournisseurs: $("#fournisseurs :selected").attr("id"),
                 code_commande: $('#code_commande').val(),
+                description: $("#description").val(),
                 qnt: $('#qnt').val()
             },
             datatype: 'html',
             success: function (response) {
                 if (response == 'valide') {
-                    window.location = "../../Views/Add_commandes/valide_commande.php?fournisseurs=" + $("#fournisseurs :selected").attr("id") + "&code_commande=" + $('#code_commande').val() + "&qnt=" + $('#qnt').val() + "";
+                    window.location = "../../Views/Add_commandes/valide_commande.php?fournisseurs=" + $("#fournisseurs :selected").attr("id") +"&description="+ $("#description").val()+ "&code_commande=" + $('#code_commande').val() + "&qnt=" + $('#qnt').val() + "";
                 } else {
                     $('#message').text('commande exsist deja');
                 }
@@ -89,6 +90,7 @@ function valider(fournisseurs){
         data: {
             fournisseurs: fournisseurs,
             code_commande: refcmd,
+            description : description,
             qnt: qt-1,
             ligne_commande: tab
         },

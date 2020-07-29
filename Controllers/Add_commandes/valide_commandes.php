@@ -4,7 +4,8 @@ session_start();
 $data = array(
     'ref' =>  $_GET['code_commande'],
     'qty' => $_GET['qnt'],
-    'id_fournisseur' => $_GET['fournisseurs']
+    'id_fournisseur' => $_GET['fournisseurs'],
+    'description' => $_GET['description']
 );
 
 
@@ -36,7 +37,7 @@ $response = curl_exec($ch);
     $id_commande=$data5[0]['id']; //Cheker
     $x = 0;
     $tab2 = $_GET['ligne_commande'];
-    var_dump($tab2);
+    //var_dump($tab2);
     
     
     while ($x<count($tab2)){

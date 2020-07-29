@@ -33,8 +33,17 @@
             <div class='commande_ref'>
               <label>Code commande : <?php echo $_GET['codeCommande']; ?> </label>
 
+
             </div>
-    
+
+            <div class='inputs_description'>
+             <label>description :  </label><span ><?php echo "  ".$_GET['description']; ?></span>
+            </div>                 
+
+
+            
+
+ 
 
             <script>
               var tab = "<?php echo $_GET['ligne_commande']; ?>".split(",");
@@ -64,9 +73,7 @@
            
                 ?>
 
-
-
-
+         
 
 
 
@@ -220,4 +227,23 @@
     border-width: 0px;
     border-radius: 40px;
   }
+
+  #description{
+   margin-top : 25px;
+  }
+
+  .inputs_description {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #F27F54;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 70px;
+    padding-top:2%;
+    padding-left: 5px;
+    left: 0;
+    margin-top: 10px;
+  }
+
 </style>

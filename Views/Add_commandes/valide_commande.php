@@ -10,6 +10,7 @@ include("../../Controllers/Login/auto_checking.php");
 <script>
                 var ref ="<?php echo $_GET['code_commande'].'-P'; ?>";
                 var refcmd ="<?php echo $_GET['code_commande']; ?>";
+                var description = "<?php echo $_GET['description']; ?>";
                 var ref_encoded=encodeURI(ref);
                 var ref_encodedcmd=encodeURI(refcmd);
                 var qt=$('#total_chq').val();

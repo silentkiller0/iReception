@@ -16,6 +16,7 @@ try {
         if($info['http_code'] ==200){
             $data = json_decode($content,true);
                 $tab = array();
+                
                 foreach ($data as $item){
 
                     //$file=file_get_contents($_SESSION["server"].'/api/index.php/ireceptionapi/ligne_commande?sortfield=t.rowid&sortorder=ASC&limit=100&sqlfilters=id_commande%3D'.$item['id'].'&DOLAPIKEY=ecee5974867c0d45c5b8475a0cc2b9db2182f080');
@@ -34,8 +35,10 @@ try {
                         if($info3['http_code'] ==200){   
                             ///////////////////////////////
                             $data2 = json_decode($content3,true);
+                           
                             array_push($tab,$item['id']);
                             array_push($tab,$item['qty']);
+                            array_push($tab,$item['description']);
                             $tabref = array();
                             $tabpos = array();
                             foreach($data2 as $i){

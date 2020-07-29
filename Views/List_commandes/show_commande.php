@@ -37,6 +37,11 @@ include("../../Controllers/Login/auto_checking.php");
             <label>Réference : </label><span><?php echo $_GET['ref_commande']; ?></span>
             </div>
 
+            <div class='inputs_description'>
+             <label>description :  </label><span ><?php echo "  ".$_GET['description']; ?></span>
+            </div>                 
+
+            <div class='inputs_complet'>
             <?php
             
             $ids=explode( ',', $_GET['id_empl']);
@@ -53,9 +58,8 @@ include("../../Controllers/Login/auto_checking.php");
 
               }
             ?>
-
-            
-
+          </div>
+       
 
           </div>
         </div>
@@ -87,15 +91,19 @@ include("../../Controllers/Login/auto_checking.php");
         </div>
 
         <div class="modal-body">
-          <label>Allée</label>
-          <input type='text' class='details_empl' id="allee"><br><br>
+           <label>Allee</label>
+           <select class='details_empl' id='fournisseurs'>
+              <?php 
+              include("../../Controllers/List_commandes/list_allees.php");
+              ?>
+            </select>
 
           <label>Rayon</label>
-          <input type='text' class='details_empl' id="rayon"><br><br>
+          <input type='text' class='details_empl' id="rayon">
 
           <label>Etage</label>
-          <input type='text' class='details_empl' id="etage"><br><br>
-          <input type='text' hidden id="id_emplacement"><br><br>
+          <input type='text' class='details_empl' id="etage">
+          <input type='text' hidden id="id_emplacement">
 
 
           <div class='text-center'>
@@ -116,6 +124,8 @@ include("../../Controllers/Login/auto_checking.php");
 </html>
 
 <style>
+
+
   .form_login {
     margin-top: 30%;
     width: 100%;
@@ -144,6 +154,10 @@ include("../../Controllers/Login/auto_checking.php");
     border-color: #F27F54;
     border-radius: 10px;
     color: #F27F54;
+  }
+
+  .inputs_complet{
+   margin-top:3%;
   }
 
   .print_container {
@@ -186,6 +200,21 @@ include("../../Controllers/Login/auto_checking.php");
     height: 40px;
     padding-left: 15px;
     position: absolute;
+    left: 0;
+    margin-top: 10px;
+  }
+
+  .inputs_description {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #F27F54;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 70px;
+    padding-top:2%;
+    padding-left: 5px;
+  
     left: 0;
     margin-top: 10px;
   }
@@ -282,4 +311,6 @@ include("../../Controllers/Login/auto_checking.php");
     border-width: 0px;
     border-radius: 40px;
   }
+
+  
 </style>

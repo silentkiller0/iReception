@@ -47,13 +47,15 @@ try {
                                     array_push($tab,$item['ref']);
                                         array_push($tab,$item['qty']);
                                         array_push($tab,$item['id']);
+                                        array_push($tab,$item['description']);
+                                        
 
                                     $tabref = array();
                                   
                                     foreach($data2 as $i){
                                       array_push($tabref,$i['ref']);
                                     }
-                                   //var_dump($data3);
+                                    //var_dump($data3);
                                     array_push($tab,$tabref);
                 
                                     $json = json_encode($tab);
