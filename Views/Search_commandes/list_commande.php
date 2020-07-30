@@ -37,10 +37,19 @@
             </div>
 
             <div class='inputs_description'>
-             <label>description :  </label><span ><?php echo "  ".$_GET['description']; ?></span>
+             <label>description :  </label><span id='description'><?php echo "  ".$_GET['description']; ?></span>
             </div>                 
 
 
+          
+            <script>
+              var desc ="<?php echo $_GET['description']; ?>";
+              if(desc == ""){
+                $('.inputs_description').hide();
+                console.log('je suis ici');
+              }
+             
+            </script>
             
 
  

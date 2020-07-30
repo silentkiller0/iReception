@@ -1,6 +1,7 @@
+
+
+
 function show_code(ref_encoded) {
-
-
 window.location = "../../Views/Search_commandes/print_palette.php?ref_Ligne_Commande="+ref_encoded;
     
     $.ajax({
