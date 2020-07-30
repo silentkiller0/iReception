@@ -38,8 +38,18 @@ include("../../Controllers/Login/auto_checking.php");
             </div>
 
             <div class='inputs_description'>
-             <label>description :  </label><span ><?php echo "  ".$_GET['description']; ?></span>
-            </div>                 
+             <span id='description'><?php echo "  ".$_GET['description']; ?></span>
+            </div> 
+
+
+            <script>
+              var desc ="<?php echo $_GET['description']; ?>";
+              if(desc == ""){
+                $('#description').text('Aucune description');
+                
+              }   
+            </script>
+                            
 
             <div class='inputs_complet'>
             <?php
