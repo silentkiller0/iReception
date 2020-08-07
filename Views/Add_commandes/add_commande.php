@@ -46,7 +46,7 @@ include("../../Controllers/Login/auto_checking.php");
 
 
             <input type='text' id='code_commande' class='inputs' placeholder="Code Commande" required >
-            <input type='text' id='qnt' class='inputs' placeholder='Quantité' required >
+            <input type='text' id='qnt' class='inputs' placeholder='Quantité de palette' required >
             <input type='text' id='description' class='inputs' placeholder='Description' required >
             <button class='button' onclick='validate()'><i class="fa fa-arrow-right" id='icons'
                   aria-hidden="true"></i></button><br>

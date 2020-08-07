@@ -58,7 +58,7 @@ function valider(fournisseurs){
         $('#moins').hide();
         $('#returnDashboard').prop('hidden',false);
         $('.buttons_container').empty();
-        $('.buttons_container').text('Commande valider');
+        $('.buttons_container').text('Commande validé');
         $('.buttons_container').css("color","red");
 
         //returnDashboard
